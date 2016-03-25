@@ -1,0 +1,451 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+ 		<script src="../includes/jquery-2.1.0.min.js"></script>
+        <script type="text/javascript" src="../includes/jquery-ui-1.10.4/js/jquery-ui-1.10.4.custom.js"></script>
+	    <script src="../js/js_editor.js" type="application/javascript" language="javascript1.5"></script>
+        <script type="text/javascript" src="../includes/bootstrap-3.3.4-dist/js/bootstrap.js"></script>
+
+         <script src="../js/js_chat.js" type="text/javascript"></script>
+
+        <link href="../includes/bootstrap-3.3.4-dist/css/bootstrap.css" rel="stylesheet">
+        <link href="../includes/cover.css" rel="stylesheet"><!---MUY IMPORTANTE PARA EL ESTILO---->
+ 		<link href="../css/style_editor.css" rel="stylesheet" type="text/css">
+        <link rel="icon" href="../img/carpeta azul.ico">
+
+        <title>Editor</title>
+
+	</head>
+
+	<body>
+
+
+
+				<div class="container">
+
+
+            			<div class="inner">
+
+              				<h3 id='nombre_editor' class="masthead-brand"></h3>
+
+                            <nav class="navbar   " role="navigation">
+                            
+                            <div class="navbar-collapse collapse" id="header1">
+
+                				<ul class="nav1 nav navbar-nav">  <!---nav navbar-nav     nav masthead-nav--->
+
+                                  <li><a  href="#" >Articulos <b class="caret"></b> </a>
+
+                                  	<ul class="dropdown-menu"> <!-----importante--->
+
+                                      <li ><a href="#" id="Publicados">Publicados</a></li>
+                                      <li ><a href="#" id="Aceptados">Aceptados</a></li>
+                                      <li ><a href="#" id="Por_Asignar">Por Asignar</a></li>
+                                      <li ><a href="#" id="En_Evaluacion">En Evaluacion</a></li>
+                                      <li ><a href="#" id="Correciones">Correciones</a></li>
+                                      <li ><a href="#" id="Rechazados">Rechazados</a></li>
+
+                                    </ul>
+
+                                  </li>
+
+
+                                  <li ><a href="#" >Formularios <b class="caret"></b></a>
+                                  	<ul class="dropdown-menu"> <!-----importante--->
+
+                                      <li ><a  href="#">Autores <b class="caret"></b> </a>
+
+                                            <ul class="dropdown-toggle">
+
+                                                <li id="" ><a href="#" onClick="f_a_a()">Añadir</a></li>
+                                                <li id="" ><a href="#" onClick="f_a_m()">Modificar</a></li>
+                                                <li id="" ><a href="#" onClick="f_a_e()">Borrar</a></li>
+
+                                            </ul>
+
+                                      </li>
+
+                                      <li  ><a href="Editor.html#">Evaluadores</a>
+
+
+                                      		<ul class="dropdown-toggle">
+
+
+                                                <li id="" ><a href="#" onClick="f_e_a()">Añadir</a></li>
+                                                <li id="" ><a href="#" onClick="f_e_m()">Modificar</a></li>
+                                                <li id="" ><a href="#" onClick="f_e_e()">Borrar</a></li>
+
+
+                                       		</ul>
+
+                                      </li>
+
+                                    </ul>
+
+                                  </li>
+
+
+          						  <li><a  onClick="f_chat()" href="../chatUti/demo/simple.php" target="f1"  name="cerrarSesion" >Chat</a></li>
+                                  <li><a href="#" id="cerrarSesion" name="cerrarSesion" >Cerrar Sesion</a></li>
+
+
+                				</ul>
+
+                            </div>
+            
+              				</nav>
+
+            			</div>
+
+
+                    <br>
+
+                    <section class="col-xs-12">
+
+                    <div id="formularios_autor">
+
+                            <div  id="añadir_autor" class="col-xs-offset-1 col-xs-10" style='display:none;'>
+
+                               <div id="formulario" class="form ff" ><!---class="form-inline"---->
+
+                                    <h3>ADICCION DE AUTORES</h3>
+                                    <hr style="background-color:#09C; height:10px; border-radius:15px;">
+
+                                    <label >Nombre</label>
+                                    <input class="form-control" name="nombre_autor" type="text" id="nombre_autor" placeholder="Nombre">
+                                    <br>
+                                    <label >Id</label>
+                                    <input class="form-control" name="id_autor" type="text" id="id_autor" placeholder="Id">
+                                    <br>
+                                    <label>Contraseña</label>
+                                    <input class="form-control" name="pass_autor" type="password" id="pass_autor" placeholder="Contraseña Autor" >
+                                    <br>
+                                    <label >Direccion</label>
+                                    <textarea class="form-control " name="direccion_autor" rows="1" id="direccion_autor" placeholder="Direccion" ></textarea>
+                                    <br>
+                                    <label >Correo</label>
+                                    <input class="form-control" name="correo_autor" type="email" id="correo_autor" placeholder="Email "title="correo_autor">
+                                    <br>
+                                    <label >Afiliacion</label>
+                                    <input class="form-control" name="afiliacion_autor" type="text" id="afiliacion_autor" placeholder="Afiliacion 'Universidad o Entidad'"title="enlace">
+                                    <br>
+                                    <label >Telefono</label>
+                                    <input class="form-control" name="tel_autor" type="tel" id="tel_autor" placeholder="Telofono o Cedular"title="tel_autor">
+                                    <br>
+                                    <button class="btn btn-primary btn-block" id="enviar_añadir_autor" >Añadir</button>
+
+
+                                </div>
+                            </div>
+
+
+
+                            <!-----MODIFICACION DE AUTORES---->
+
+                            <div  id="modificar_autor" class="col-xs-offset-1 col-xs-10" style='display:none;'>
+
+                               <div id="formulario" class="form ff" ><!---class="form-inline"---->
+
+                                    <h3>MODIFICACION DE AUTORES</h3>
+                                    <hr style="background-color:#09C; height:10px; border-radius:15px;">
+
+
+                                    <label style="font-size:25px;">ID A MODIFICAR</label> <br>
+                                    <label style="font-size:10px;">(Ingrese los Datos que desea Modificar)</label>
+                                    <input class="form-control" name="id_autor" type="text" id="id_autor_m" placeholder="Id">
+                                    <br>
+
+                                    <button class="btn btn-primary btn-block" id="buscar_modificar_autor" >Buscar</button>
+                                    <br>
+                                    <label >Nombre</label>
+                                    <input class="form-control" name="nombre_autor_m" type="text" id="nombre_autor_m" placeholder="Nombre">
+                                    <br>
+                                    <label>Contraseña</label>
+                                    <input class="form-control" name="pass_autor" type="password" id="pass_autor_m" placeholder="Contraseña" >
+                                    <br>
+                                    <label >Direccion</label>
+                                    <textarea class="form-control " name="direccion_autor" rows="1" id="direccion_autor_m" placeholder="Direccion" ></textarea>
+                                    <br>
+                                    <label >Correo</label>
+                                    <input class="form-control" name="correo_autor" type="text" id="correo_autor_m" placeholder="Email "title="correo_autor">
+                                    <br>
+                                    <label >Afiliacion</label>
+                                    <input class="form-control" name="afiliacion_autor" type="text" id="afiliacion_autor_m" placeholder="Afiliacion 'Universidad o Entidad'"title="enlace">
+                                    <br>
+                                    <label >Telefono</label>
+                                    <input class="form-control" name="tel_autor" type="number" id="tel_autor_m" placeholder="Telofono o Cedular"title="tel_autor">
+                                    <br>
+
+                                    <button class="btn btn-primary btn-block" id="enviar_modificar_autor" >Modificar</button>
+
+
+                                </div>
+                            </div>
+
+
+                            <!----ELIMINAR AUTOR--->
+                            <div  id="eliminar_autor" class="col-xs-offset-1 col-xs-10" style='display:none;'>
+
+                               <div id="formulario" class="form ff" ><!---class="form-inline"---->
+
+                                    <h3>ELIMINAR AUTOR</h3>
+                                    <hr style="background-color:#09C; height:10px; border-radius:15px;">
+
+
+                                    <label style="font-size:25px;">ID A ELIMINAR</label>
+                                    <input class="form-control" name="id_autor" type="text" id="id_autor_e" placeholder="Id">
+
+                                    <br>
+                                    <button class="btn btn-primary btn-block" id="enviar_eliminar_autor" >Eliminar</button>
+
+
+                                </div>
+                            </div>
+
+                        </div> <!---TERMINA FORMULARIO DE AUTOR--->
+
+                    <div id="formularios_evaluador">
+
+                            <div  id="añadir_evaluador" class="col-xs-offset-1 col-xs-10" style='display:none;'>
+
+                               <div id="formulario" class="form ff" ><!---class="form-inline"---->
+
+                                    <h3>ADICCION EVALUADORES</h3>
+                                    <hr style="background-color:#09C; height:10px; border-radius:15px;">
+
+                                    <label >Nombre</label>
+                                    <input class="form-control" name="nombre_autor" type="text" id="nombre_evaluador" placeholder="Nombre">
+                                    <br>
+                                    <label >Id</label>
+                                    <input class="form-control" name="id_autor" type="text" id="id_evaluador" placeholder="Id">
+                                    <br>
+                                    <label>Contraseña</label>
+                                    <input class="form-control" name="pass_autor" type="password" id="pass_evaluador" placeholder="Contraseña" >
+                                    <br>
+                                    <label >Direccion</label>
+                                    <textarea class="form-control " name="direccion_evaluador" rows="1" id="direccion_evaluador" placeholder="Direccion" ></textarea>
+                                    <br>
+                                    <label >Correo</label>
+                                    <input class="form-control" name="correo_autor" type="text" id="correo_evaluador" placeholder="Email "title="correo_autor">
+                                    <br>
+                                    <label >Afiliacion</label>
+                                    <input class="form-control" name="afiliacion_autor" type="text" id="afiliacion_evaluador" placeholder="Afiliacion 'Universidad o Entidad'"title="enlace">
+                                    <br>
+                                    <label >Telefono</label>
+                                    <input class="form-control" name="tel_autor" type="number" id="tel_evaluador" placeholder="Telofono o Cedular"title="tel_autor">
+                                    <br>
+                                    <label >Estudios Realizados</label>
+                                    <input class="form-control" name="tel_autor" type="text" id="estudios_evaluador" placeholder="Estudios 'Postgrados, Especializacion...'"title="tel_autor">
+                                    <br>
+                                    <button class="btn btn-primary btn-block" id="enviar_añadir_evaluador" >Añadir</button>
+
+
+                                </div>
+                            </div>
+
+                            <!-----MODIFICACION DE AUTORES---->
+
+                            <div  id="modificar_evaluador" class="col-xs-offset-1 col-xs-10" style='display:none;'>
+
+                               <div id="formulario" class="form ff" ><!---class="form-inline"---->
+
+                                    <h3>MODIFICACION DE EVALUADORES</h3>
+                                    <hr style="background-color:#09C; height:10px; border-radius:15px;">
+
+
+                                    <label style="font-size:25px;">ID A MODIFICAR</label> <br>
+                                    <label style="font-size:10px;">(Ingrese los Datos que desea Modificar)</label>
+                                    <input class="form-control" name="id_autor" type="text" id="id_evaluador_m" placeholder="Id">
+                                    <br>
+
+                                    <button class="btn btn-primary btn-block" id="buscar_modificar_evaluador" >Buscar</button>
+                                    <br>
+                                    <label >Nombre</label>
+                                    <input class="form-control" name="nombre_autor_m" type="text" id="nombre_evaluador_m" placeholder="Nombre">
+                                    <br>
+                                    <label>Contraseña</label>
+                                    <input class="form-control" name="pass_autor" type="password" id="pass_evaluador_e" placeholder="Contraseña" >
+                                    <br>
+                                    <label >Direccion</label>
+                                    <textarea class="form-control " name="direccion_autor" rows="1" id="direccion_evaluador_m" placeholder="Direccion" ></textarea>
+                                    <br>
+                                    <label >Correo</label>
+                                    <input class="form-control" name="correo_autor" type="text" id="correo_evaluador_m" placeholder="Email "title="correo_autor">
+                                    <br>
+                                    <label >Afiliacion</label>
+                                    <input class="form-control" name="afiliacion_autor" type="text" id="afiliacion_evaluador_m" placeholder="Afiliacion 'Universidad o Entidad'"title="enlace">
+                                    <br>
+                                    <label >Telefono</label>
+                                    <input class="form-control" name="tel_autor" type="text" id="tel_evaluador_m" placeholder="Telofono o Cedular" title="tel_autor">
+                                    <br>
+                                    <label >Estudios Realizados</label>
+                                    <input class="form-control" name="tel_autor" type="text" id="estudios_evaluador_m" placeholder="Estudios 'Postgrados, Especializaciones...'"title="tel_autor">
+                                    <br>
+                                    <button class="btn btn-primary btn-block" id="enviar_modificar_evaluador" >Modificar</button>
+
+
+                                </div>
+                            </div>
+
+
+                            <!----ELIMINAR evaluador--->
+                            <div  id="eliminar_evaluador" class="col-xs-offset-1 col-xs-10" style='display:none';>
+
+                               <div id="formulario" class="form ff" ><!---class="form-inline"---->
+
+                                    <h3>ELIMINAR EVALUADOR</h3>
+                                    <hr style="background-color:#09C; height:10px; border-radius:15px;">
+
+
+                                    <label style="font-size:25px;">ID A ELIMINAR</label>
+                                    <input class="form-control" name="id_autor" type="text" id="id_evaluador_e" placeholder="Id">
+
+                                    <br>
+                                    <button class="btn btn-primary btn-block" id="enviar_eliminar_evaluador" >Eliminar</button>
+
+
+                                </div>
+                            </div>
+
+                        <div id="mis_articulos" style='display:none;'> <!---PARA OCULTAR LOS ARTICULOS--->
+
+                        	<h1 align="center">ARTICULOS PUBLICADOS</h1>
+                            <br>
+
+                        	<div id="row" class="row" align="left" style="border-radius:15px;">
+
+
+                        	<!---ACA SE AÑADEN LOS MIS ARTICULOS DE LA BASE DE DATOS--->
+
+                        	</div>
+
+                        </div>
+
+                        <div id="mis_articulos1" style='display:none;'> <!---PARA OCULTAR LOS ARTICULOS--->
+
+
+                        	<h1 align="center">ARTICULOS ACEPTADOS</h1>
+                            <br>
+
+                        	<div id="row1" class="row" align="left" style="border-radius:15px;">
+
+                        	<!---ACA SE AÑADEN LOS MIS ARTICULOS DE LA BASE DE DATOS--->
+
+                        	</div>
+
+                        </div>
+
+                        <div id="mis_articulos2" style='display:none;'> <!---PARA OCULTAR LOS ARTICULOS--->
+
+                            <h2 align="center">ARTICULOS POR ASIGAR EVALUADOR</h2>
+                            <br>
+
+                        	<div id="row2" class="row" align="left" style="border-radius:15px;">
+
+		         	<!---ACA SE AÑADEN LOS MIS ARTICULOS DE LA BASE DE DATOS--->
+
+                        	</div>
+
+                        </div>
+
+                        <div id="mis_articulos3" style='display:none;'> <!---PARA OCULTAR LOS ARTICULOS--->
+
+
+                        	<h1 align="center">ARTICULOS EN PERIODO DE EVALUACION</h1>
+
+                            <br>
+
+                        	<div id="row3" class="row" align="left" style="border-radius:15px;">
+
+
+                        	<!---ACA SE AÑADEN LOS MIS ARTICULOS DE LA BASE DE DATOS--->
+
+                        	</div>
+
+                        </div>
+
+                        <div id="mis_articulos4" style='display:none;'> <!---PARA OCULTAR LOS ARTICULOS--->
+
+                        	<h1 align="center">ARTICULOS POR CORREGIR</h1>
+                            <br>
+
+                        	<div id="row4" class="row" align="left" style="border-radius:15px;">
+                   	<!---ACA SE AÑADEN LOS MIS ARTICULOS DE LA BASE DE DATOS--->
+
+                        	</div>
+
+                        </div>
+
+                        <div id="mis_articulos5" style='display:none;'> <!---PARA OCULTAR LOS ARTICULOS--->
+
+
+                        	<h1 align="center">ARTICULOS RECHAZADOS</h1>
+                            <br>
+
+                        	<div id="row5" class="row" align="left" style="border-radius:15px;">
+
+
+                        	</div>
+
+                        </div>
+
+                        <div id="divtabla" class="col-lg-8 col-md-push-2" style="display:none">
+
+
+                               <table id="tabla_evaluadores" class="table table-condensed">
+
+                                  <!-- Aplicadas en las filas -->
+                                  <tr class="active">EVALUADORES</tr>
+
+
+                                  <!-- Aplicadas en las celdas (<td> o <th>) -->
+                                  <tr>
+                                    <td class="active">ID</td>
+                                    <td class="success">NOMBRE</td>
+                                    <td class="warning">[]</td>
+
+                                  </tr>
+
+
+                                </table>
+
+                                <button id="btn_asignar" type="button" class="btn btn-info" name="j" >ASIGNAR</button>
+
+                         </div>
+
+						<div id="divf1" class="col-xs-12" style="display:none" >
+                        	<iframe id="f1"  frameborder="0" name="f1"  ></iframe>
+                        </div>
+
+
+
+                    </section>
+
+
+                    <footer class="col-xs-12">
+
+                        <div class="">
+
+                            <div class="inner">
+
+                                <p>Universidad De Caldas.</p>
+                            </div>
+                        </div>
+
+                    </footer>
+
+        		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+
+		<!-- notificaciones-->
+
+        <script src="../includes/jquery-2.1.0.min.js"></script>
+        <script type="text/javascript" src="../includes/jquery-ui-1.10.4/js/jquery-ui-1.10.4.custom.js"></script>
+
+
+        <script src="../includes/ttw-notification-menu.min.js" type="text/javascript"></script>
+        <script src="../js/js_notificaciones.js" type="text/javascript"></script>
+
+        <script src="../js/js_chat.js" type="text/javascript"></script>
+
+        <script src="../js/js_autor.js" type="application/javascript" language="javascript1.5"></script>
+
+        <link rel="stylesheet" type="text/css" href="../css/style_light.css"> <!--IMPORTANTE--->
+
+
+        <!----fin---->
+
+        <link rel="icon" href="../img/carpeta azul.ico">
+
+        <title>Autor</title>
+
+        <!-----  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet"> <!---ME AFECTA LA CAJA DE NOTIFICAICONES---->
+
+    	<link href="../includes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="../includes/cover.css" rel="stylesheet">
+
+ 		<link href="../css/style_autor.css" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+	</head>
+
+	<body>
+
+		<div class="">
+
+			<div class="">
+
+				<div class="container">
+
+					<header class="">
+            			<div class="inner">
+
+              				<h3 id='nombre_autor' class="masthead-brand"></h3>
+
+                            <nav>
+
+                				<ul class="nav masthead-nav">
+                                  <li class="active"><a href="Autor.html#" onClick="mostrar_formulario()">Enviar Articulo</a></li>
+                                  <li><a  href="Autor.html#" onClick="mostrar_mis_articulos()">Mis Articulos</a></li>
+                                  <li id="notificaciones" ><a href="Autor.html#"><img src="../img/not.png" height="30" width="30"></a></li>
+                                  	  <li><a  onClick="f_chat()" href="../chatUti/demo/simple.php" target="f1"  name="cerrarSesion" >Chat</a></li>
+                                  <li><a href="#" id="cerrarSesion" name="cerrarSesion" >Cerrar Sesion</a></li>
+
+                				</ul>
+
+
+
+                                <!------->
+
+              				</nav>
+
+
+
+
+
+
+            			</div>
+          			</header>
+
+                    <br>
+
+                    <section class="col-xs-12">
+
+		<br><br><br><br><br><br>
+
+                        <div  id="formulario_completo" class="col-xs-offset-1 col-xs-10" style='display:none;'>
+
+                             <h2>FORMULARIO DE ADICCION DE ARTICULOS</h2>
+
+                            <br><br>
+
+                            <div id="formulario" class="form" ><!---class="form-inline"---->
+
+                                <label for="titulo">Titulo</label>
+                                <input class="form-control" name="titulo" type="text" id="titulo" placeholder="titulo" title="Titulo">
+                                <br>
+                                <label for="tema">Tema</label>
+                                <input class="form-control" name="tema" type="text" id="tema" placeholder="tema" title="tema">
+                                <br>
+                                <label for="palabras claves">Palabras Claves</label>
+                                <input class="form-control name=" name="p_claves" type="text" id="p_claves" placeholder="palabras claves" title="p_claves">
+                                <br>
+                                <label for="Mensaje">Resumen</label>
+                                <textarea class="form-control name="resumen" rows="4" id="resumen" placeholder="resumen "Max 150 Caracteres" ></textarea>
+                                <br>
+
+                                 <form enctype="multipart/form-data" class="formulario">
+                                <label for="ciudad">Enlace</label>
+                                <input class="form-control name=" name="enlace" type="file" id="enlace" placeholder="enlace"title="enlace">
+                                <br>
+                                <label for="ciudad">Imagen</label>
+                                <input class="form-control name=" name="img" type="file" id="img" placeholder="Imagen"title="enlace">
+                                </form>
+                                <br>
+                                <button class="btn btn-primary btn-block" id="enviar" >Enviar</button>
+
+
+
+                            </div>
+                        </div>
+
+
+                        <div id="mis_articulos" style='display:none;'> <!---PARA OCULTAR LOS ARTICULOS--->
+
+                        	<h1 align="center">MIS ARTICULOS</h1>
+
+                            <br><br><br>
+
+							<div id="row" class="row" align="left">
+
+
+                        	<!---ACA SE AÑADEN LOS MIS ARTICULOS DE LA BASE DE DATOS--->
+
+                        	</div>
+
+                        </div>
+
+
+                        <div  id="enviar_correciones_a" class="col-xs-offset-1 col-xs-10" style='display:none;'>
+
+                               <div id="formulario" class="form ff" ><!---class="form-inline"---->
+
+                                    <h3>ENVIAR CORRECION</h3>
+                                    <hr style="background-color:#09C; height:10px; border-radius:15px;">
+
+
+                                    <form enctype="multipart/form-data" class="formulario1">
+                                        <label for="ciudad">Enlace</label>
+                                        <input class="form-control name=" name="enlace1" type="file" id="enlace1" placeholder="enlace"title="enlace">
+                                        <label for="ciudad">Imagen</label>
+                                <input class="form-control name=" name="img1" type="file" id="img1" placeholder="Imagen"title="enlace">
+                                        <br>
+
+                                    </form>
+
+                                    <br>
+                                	<button class="btn btn-primary btn-block" id="enviar_a" >Enviar</button>
+
+                            	</div>
+
+
+                        </div>
+						<div id="divf1" class="col-xs-12" style="display:none" >
+                        	<iframe id="f1"  frameborder="0" name="f1"  ></iframe>
+                        </div>
+
+                    </section>
+
+
+                    <footer class="col-xs-12">
+
+                        <div class="">
+
+                            <div class="inner">
+
+
+                                <p>Universidad De Caldas.</p>
+                            </div>
+                        </div>
+
+                    </footer>
+
+        		</div>
+
+			</div>
+
+    	</div>
+
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+

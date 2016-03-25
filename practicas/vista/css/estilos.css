@@ -1,0 +1,63 @@
+/*@import url("resetearEstilos.css");*/
+@import url("principal.css");
+@import url("formulario.css");
+@import url("styleBox.css");
+@import url("styleMenu.css");
+
+
+header{
+	background-color:#099;
+	height:150px;
+	border-radius:5px;
+	margin:auto;
+	margin-top:10px;
+	
+	}
+	
+tabla1{
+
+	margin-top:50px;
+	
+	}
+	
+nav{
+	
+	margin:auto;
+	background-color:#099;
+	height:700px;
+	border-radius:5px;
+	margin:auto;
+	margin-top:10px;
+	
+	
+		
+	}
+	
+	
+	
+section{
+	background-color:#099;
+	height:700px;
+	border-radius:5px;
+	margin:auto;
+	margin-top:10px;
+	
+	}
+	
+footer{
+	background-color:#099;
+	height:150px;
+	border-radius:5px;
+
+	margin: 10px 0px 10px 0px;
+
+	
+	}
+	
+menum{
+	
+	margin:auto;
+	background-color:#0C0;
+	}
+	
+	

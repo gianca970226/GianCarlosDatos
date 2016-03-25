@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+
+		<!-- notificaciones-->
+
+        <script src="../includes/jquery-2.1.0.min.js"></script>
+        <script type="text/javascript" src="../includes/jquery-ui-1.10.4/js/jquery-ui-1.10.4.custom.js"></script>
+
+
+        <script src="../includes/ttw-notification-menu.min.js" type="text/javascript"></script>
+       
+
+      
+
+        <script src="../js/js_evaluador.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="../css/style_light.css"> <!--IMPORTANTE--->
+
+
+        <!----fin---->
+
+        <link rel="icon" href="../img/carpeta azul.ico">
+
+        <title>Evaluador</title>
+
+        <!-----  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet"> <!---ME AFECTA LA CAJA DE NOTIFICAICONES---->
+
+    	<link href="../includes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="../includes/cover.css" rel="stylesheet">
+
+ 		<link href="../css/style_autor.css" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+	</head>
+
+	<body>
+
+		<div class="">
+
+			<div class="">
+
+				<div class="container">
+
+					<header class="">
+            			<div class="inner">
+
+              				<h3 id='nombre_evaluador' class="masthead-brand"></h3>
+
+                            <nav>
+
+                				<ul class="nav masthead-nav">
+                                   <li id="cargarArticulos" name="cargarArticulos" class="active"><a href="#">Listar Articulos</a></li>
+                                 
+                                  
+                                  	  <li><a  onClick="f_chat()" href="../chatUti/demo/simple.php" target="f1"  name="cerrarSesion" >Chat</a></li>
+                                  <li><a href="#" id="cerrarSesion" name="cerrarSesion" >Cerrar Sesion</a></li>
+
+                				</ul>
+
+
+
+                                <!------->
+
+              				</nav>
+
+
+
+
+
+
+            			</div>
+          			</header>
+
+                    <br>
+
+                    <section class="col-xs-12">
+<div class="inner cover col-xs-12">
+            <h1 class="cover-heading ">EVALUADOR</h1>
+           <table width="640" class="table" id="Contenido">
+				<tr>
+                <td width="70" >  TITULO  </td>
+				<td width="46">  TEMA  </td>
+				<td width="69">  RESUMEN  </td>
+				<td width="32">  ID  </td>
+				<td width="75">  PALABRAS CLAVES  </td>
+				<td width="74">  ENLACE  </td>
+                <td width="60">  ESTADO  </td>
+                <td width="57">  AUTOR  </td>
+                <td width="117">  DESCARGAR  </td>
+                <td width="117">  COMENTARIOS  </td>
+                <td width="117">  NOTA  </td>
+                <td width="117">  EVALUAR  </td>
+	</tr>
+  
+	</table>
+
+
+	
+
+                       
+						<div id="divf1" class="col-xs-12" style="display:none" >
+                        	<iframe id="f1"  frameborder="0" name="f1"  ></iframe>
+                        </div>
+
+                    </section>
+
+
+                    <footer class="col-xs-12">
+
+                        <div class="">
+
+                            <div class="inner">
+
+                     
+
+                                <p>Universidad De Caldas.</p>
+                            </div>
+                        </div>
+
+                    </footer>
+
+        		</div>
+
+			</div>
+
+    	</div>
+
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
